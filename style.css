@@ -1,0 +1,96 @@
+::-moz-focus-inner {
+	border: 0;
+}
+html,
+body {
+	background: #222;
+	color: #fff;
+	font: 24px/40px sans-serif;
+	height: 100%;
+	margin: 0;
+	overflow: hidden;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, .5);
+}
+.play {
+	background: linear-gradient(to bottom, #fff, #777);
+	border: 0;
+	border-radius: 2em;
+	color: rgba(63, 63, 63, .4);
+	cursor: pointer;
+	font: inherit;
+	font-weight: bold;
+	margin: 1em;
+	padding: .25em 1em;
+	text-shadow:
+		0 1px 2px #aaa,
+		0 0 0 #000,
+		0 1px 2px #aaa;
+	text-transform: inherit;
+}
+.play:hover {
+	background: linear-gradient(to bottom, #0f0, #070);
+	color: rgba(255, 255, 255, .8);
+	text-shadow: none;
+}
+.score-wrap {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+}
+.target {
+	box-shadow:
+		0 2px 4px rgba(255, 255, 255, .5) inset,
+		0 -2px 4px rgba(0, 0, 0, .5) inset,
+		0 2px 4px rgba(0, 0, 0, .5);
+	border: 0;
+	border-radius: 50%;
+	color: #fff;
+	cursor: pointer;
+	font: 30px/1 sans-serif;
+	font-weight: bold;
+	outline: 0;
+	position: absolute;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, .5);
+	transition: background 2s;
+}
+.target::-moz-focus-inner {
+	border: 0;
+}
+.target.blink {
+	animation: blink .3s infinite;
+}
+.target.popout {
+	animation: popout .3s forwards;
+}
+.target.disabled {
+	background: #666 !important;
+	cursor: default;
+}
+.intro,
+.game-over {
+	background: linear-gradient(to bottom, #111, #000);
+	position: relative;
+	padding: 20px;
+	text-align: center;
+	text-transform: uppercase;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 1;
+}
+.game-over {
+	display: none;
+}
+@keyframes blink {
+	100% {
+		opacity: 0;
+	}
+}
+@keyframes popout {
+	25% {
+		transform: scale(1.2);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(.2);
+	}
+}
